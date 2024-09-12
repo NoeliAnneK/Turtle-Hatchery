@@ -1,0 +1,80 @@
+/* Reset default margin and padding */
+body, h2, table {
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the form vertically and horizontally */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(images/background2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.buytic h1{
+  text-align: center;
+  color: deeppink;
+}
+/* Container for the form */
+.flower {
+  text-align: center;
+}
+
+.buytic h1{
+  text-align: center;
+  color: deeppink;
+}
+
+/* Styling for the form */
+#dataForm {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 50px auto;
+  color: #fff;
+  padding: 20px;
+  width: 70%;
+}
+
+/* Style for input fields and labels */
+.enter {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Styling for buttons */
+.btn1 {
+  background-color: #3498db;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Styling for the display area */
+#displayArea {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 50px auto;
+  color: #fff;
+  padding: 20px;
+  width: 70%;
+}

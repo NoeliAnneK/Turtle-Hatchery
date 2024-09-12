@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="paymentDetails.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+      <title>Payment Details</title>
+  
+        
+    </head>
+    <div class="button1">
+      <form action="tur.tickets2.html">
+      <button class="btn1">Bookings</button>
+      </form>
+    <body style="background-image:url(images/background2.png); background-position:center; background-repeat: no-repeat; background-size: cover;">
+        <fieldset id="details1">
+            <legend>Details</legend>
+            <form>
+            <div class="details2">
+                <div class="det">
+                    <label for="cname">Name on the Card</label><br><br>
+                    <input type="text" id="cname" name="cname" placeholder="Name on Card" required><br><br>
+                </div>
+                <br><br>
+                <div class="det">
+                    <label for="ccnum">Credit Card Number</label><br><br>
+                    <input type="text" id="ccnum" name="ccnum" placeholder="Card Number" required><br><br>
+                </div>
+                <br><br>
+                <div class="det">
+                    <label for="expdate">Expiry Date</label><br><br>
+                    <input type="text" id="expdate" name="expdate" placeholder="Expiry Date" required><br><br>
+                    <label for="cvv">Cvv</label><br><br>
+                    <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+                </div>
+                <br><br>
+                <div class="submit">
+                  <button type="button" id="submit" onclick="submitButton()">Submit</button>
+                </div>
+              </form>
+              <div class="button1">
+                <form action="confirmation.html">
+                <button class="btn1">Continue with Purchase</button>
+                </form>   
+            </form>
+            </div> 
+          </fieldset><br><br>
+          <fieldset>
+            <legend>Summary</legend>
+            <table id="userTable">
+                <thead>
+                  <tr>
+                    <th>Name on Card</th>
+                    <th>Credit Card Number</th>
+                    <th>Expiry Date</th>
+                    <th>CVV</th>
+                  </tr>
+                </thead>
+                <tbody id="userDataBody">
+                  <!-- User data rows will be inserted here -->
+                </tbody>
+              </table>
+        </fieldset>
+        <script>
+            function submitButton() {
+    const NameonCard = document.getElementById("cname").value;
+    const CreditcardNumber = document.getElementById("ccnum").value;
+    const ExpiryDate = document.getElementById("expdate").value;
+    const CVV = document.getElementById("cvv").value;
+  
+    const userData = {
+      NameonCard: NameonCard,
+      CreditcardNumber: CreditcardNumber,
+      ExpiryDate: ExpiryDate,
+      CVV: CVV
+    };
+  
+    // Store the user data in localStorage
+    localStorage.setItem("userData", JSON.stringify(userData));
+    
+    displayUserData(); // Call the function to display user data
+  }
+  function displayUserData() {
+    const userDataString = localStorage.getItem("userData");
+    if (userDataString) {
+      const userData = JSON.parse(userDataString);
+      const userDataBody = document.getElementById("userDataBody");
+  
+      // Create a new row and cells to display the user data
+      const newRow = document.createElement("tr");
+      for (const property in userData) {
+        const newCell = document.createElement("td");
+        newCell.textContent = userData[property];
+        newRow.appendChild(newCell);
+      }
+  
+      // Append the row to the table body
+      userDataBody.appendChild(newRow);
+    }
+  } 
+  
+  const phoneInputField = document.querySelector("#phone");
+  const phoneInput = window.intlTelInput(phoneInputField, 
+  {
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+function confirmation(){
+    window.location.href="confirmation.html";
+}
+        </script>
+    </body>
+</html>

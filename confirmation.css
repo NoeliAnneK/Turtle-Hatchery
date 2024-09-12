@@ -1,0 +1,22 @@
+*{
+    font-family: poppins ,sans-serif;
+}
+#ticketsbg{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 711px;
+    min-width: auto;
+}
+.con{
+    color: navy;
+    text-align: center;
+}
+  
+.buytic h1{
+  text-align: center;
+  color: deeppink;
+}

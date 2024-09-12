@@ -1,0 +1,105 @@
+*{
+    font-family: poppins ,sans-serif;
+  }
+  #ticketsbg{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 711px;
+    min-width: auto;
+  }
+  .booking1{
+    color: navy;
+  }
+  .count {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 350px;
+      padding: 20px;
+      border-radius: 20px;
+      position: relative;
+    }
+.buytic h1{
+  text-align: center;
+  color: deeppink;
+}
+#button1{
+  width: 100px;
+  background-color: aqua;
+}
+/*Guest count*/
+.count{
+    height: 45px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(87, 86, 86,0.1);
+    border-radius: 10px;
+}
+.count span{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/*payments*/
+.payments{
+    border-collapse: collapse;
+    width: 100%;
+}
+.td,th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even){
+    background-color: #dddddd;
+}
+.button1{
+  border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 2%;
+  
+}
+.button1:hover {
+  background-color: rgb(56, 90, 194);
+}
+.btn1 {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 2%;
+  }
+  
+  .btn1:hover {
+    background-color: rgb(56, 90, 194);
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+   

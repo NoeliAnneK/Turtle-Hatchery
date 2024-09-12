@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bookings</title>
+        <link rel="stylesheet" href="tur.tickets.css">
+        <meta charset="utf-8">
+        <!--<meta name=viewport
+        content=width=device-width,initial scale=1-->
+
+        <style>
+            #customers {
+              font-family: Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+            #customers td, #customers th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+            #customers tr:hover {background-color: #ddd;}
+
+            #customers th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #04AA6D;
+              color: white;
+            }
+    </style>
+
+
+    </head>
+    <body>
+        
+            <img id="ticketsbg" src="images/background2.png" alt="tickets">
+        
+        <!--Ticket Booking-->
+    <div class="buytic">
+            <h1>Buy Tickets</h1>
+        </div>
+       
+           <form method="POST" name="sample">
+            <!--date-->
+            <div class="booking1">
+            <fieldset>
+                <legend><h3>When are you coming?</h3></legend>
+                <input type="date" id="calendar" name="calendar"></div>
+            </fieldset>
+
+            <!--The headcount-->
+            <fieldset>
+                <legend><h3>The Headcount</h3></legend>
+                <br><label for="sl adult">SL Adult(Above 15 yrs)</label>
+                <div class="count">
+                    <span class="plus">+</span>
+                    <span class="number" id="localAdult">00</span>
+                    <span class="min">-</span>
+                </div>
+
+                <br><label for="sl child">SL Child(5 to 14 Yrs)</label>
+                <div class="count">
+                    <span class="plus1">+</span>
+                    <span class="number1" id="localChild" >00</span>
+                    <span class="min1">-</span>
+                </div>
+    
+                <br><label for="foreign adult">Foreign Adult(Above 15 Yrs)</label>
+                <div class="count">
+                    <span class="plus2">+</span>
+                    <span class="number2" id="foreignAdult">00</span>
+                    <span class="min2">-</span>
+                </div>
+
+                <br><label for="foreign child">Foreign Child(5 to 14 Yrs)</label>
+                <div class="count">
+                    <span class="plus3">+</span>
+                    <span class="number3" id="foreignChild">00</span>
+                    <span class="min3">-</span>
+                </div>
+    
+                <br><label for="infants">Infants(Under 4 Yrs)</label>
+                <div class="count">
+                    <span class="plus4">+</span>
+                    <span class="number4" id="infant">00</span>
+                    <span class="min4">-</span>
+                </div>
+            </fieldset>
+
+
+        <script type="text/javascript">
+
+            var plus;
+            var minus;
+            
+             plus = document.querySelector(".plus");
+             minus = document.querySelector(".min");
+            let num = document.querySelector(".number");
+            let a = 0;
+
+            plus.addEventListener("click", ()=>{
+                a++;
+                a = (a < 10) ? "0" + a : a;
+                num.innerText = a;
+            });
+
+            minus.addEventListener("click", ()=>{
+                if(a > 0){
+                    a--;
+                    a = (a < 10) ? "0" + a : a;
+                    num.innerText = a;
+                }
+            });
+
+             plus = document.querySelector(".plus1");
+             minus = document.querySelector(".min1");
+            let num1 = document.querySelector(".number1");
+            let a1 = 0;
+
+            plus.addEventListener("click", ()=>{
+                a1++;
+                a1 = (a1 < 10) ? "0" + a1 : a1;
+                num1.innerText = a1;
+            });
+
+            minus.addEventListener("click", ()=>{
+                if(a1 > 0){
+                    a1--;
+                    a1 = (a1 < 10) ? "0" + a1 : a1;
+                    num1.innerText = a1;
+                }
+            });
+
+            plus = document.querySelector(".plus2");
+            minus = document.querySelector(".min2");
+            let num2 = document.querySelector(".number2");
+            let a2 = 0;
+
+            plus.addEventListener("click", ()=>{
+                a2++;
+                a2 = (a2 < 10) ? "0" + a2 : a2;
+                num2.innerText = a2;
+            });
+
+            minus.addEventListener("click", ()=>{
+                if(a2 > 0){
+                    a2--;
+                    a2 = (a2 < 10) ? "0" + a2 : a2;
+                    num2.innerText = a2;
+                }
+            });
+
+            plus = document.querySelector(".plus3");
+            minus = document.querySelector(".min3");
+            let num3 = document.querySelector(".number3");
+            let a3 = 0;
+
+            plus.addEventListener("click", ()=>{
+                a3++;
+                a3 = (a3 < 10) ? "0" + a3 : a3;
+                num3.innerText = a3;
+            });
+
+            minus.addEventListener("click", ()=>{
+                if(a3 > 0){
+                    a3--;
+                    a3 = (a3 < 10) ? "0" + a3 : a3;
+                    num3.innerText = a3;
+                }
+            });
+
+
+            plus = document.querySelector(".plus4");
+            minus = document.querySelector(".min4");
+            let num4 = document.querySelector(".number4");
+            let a4 = 0;
+
+            plus.addEventListener("click", ()=>{
+                a4++;
+                a4 = (a4 < 10) ? "0" + a4 : a4;
+                num4.innerText = a4;
+            });
+
+            minus.addEventListener("click", ()=>{
+                if(a4 > 0){
+                    a4--;
+                    a4 = (a4 < 10) ? "0" + a4 : a4;
+                    num4.innerText = a4;
+                }
+            });
+
+
+
+        </script>
+           
+
+            <!--Duration-->
+<fieldset>
+    <br><legend><h3>Duration</h3></legend>
+    <p>
+        Select your Duration:
+    </p>
+    <div class="times">
+        <label><input type="checkbox" class="hour" value="0800-0900" id="time1">08.00 am - 09.00 am</label><br><br>
+        <label><input type="checkbox" class="hour" value="0900-1000" id="time2">09.00 am - 10.00 am</label><br><br>
+        <label><input type="checkbox" class="hour" value="1000-1100" id="time3">10.00 am - 11.00 am(Peak)</label><br><br>
+        <label><input type="checkbox" class="hour" value="1100-1200" id="time4">11.00 am - 12.00 am(Peak)</label><br><br>
+        <label><input type="checkbox" class="hour" value="1200-1300" id="time5">12.00 am - 1.00 am</label><br><br>
+        <label><input type="checkbox" class="hour" value="1300-1400" id="time6">1.00 am - 2.00 am</label><br><br>
+        <label><input type="checkbox" class="hour" value="1400-1500" id="time7">2.00 am - 3.00 am</label><br><br>
+        <label><input type="checkbox" class="hour" value="1500-1600" id="time8">3.00 am - 4.00 am(Peak)</label><br><br>
+        <label><input type="checkbox" class="hour" value="1600-1700" id="time9">4.00 am - 5.00 am(Peak)</label><br><br>
+        <label><input type="checkbox" class="hour" value="1700-1800" id="time10">5.00 am - 6.00 am(Peak)</label><br><br>
+
+        
+    </div>
+
+     <div class="print">
+        <p class="text">You Have Selected: <span class="value"></span></p>
+      </div>
+
+    <script type="text/javascript">
+      
+        var value = document.querySelector('.value')
+        var listArray = []
+
+        const checkboxes = document.querySelectorAll('.hour')
+
+        checkboxes.forEach((hour) => {
+        hour.addEventListener('click', function () {
+
+        if (this.checked === true) {
+          listArray.push(this.value)
+          value.textContent = listArray.join(' & ')
+        } else {
+          listArray = listArray.filter((e) => e !== this.value)
+          value.textContent = listArray.join(' & ')
+
+        }
+     })
+})
+
+
+
+
+    </script>
+
+    <div class="button">
+          <input type="button" name="add" id="button1" value="Submit" onclick="addToSummeryTable();"  class="btn btn-success">
+    </div>
+
+      
+</fieldset>
+
+<fieldset>
+    <br><legend><h3>Charges per Hour(1 hour based)</h3></legend>
+    <table class="payments">
+        <thead>
+            <tr>
+                <th>Hours</th>
+                <th>Guests</th>
+                <th>Charges</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Normal hours</td>
+                <td>Foreign Adult<br>Foreign Child</td>
+                <td>10 USD<br>&nbsp 5 USD</td>
+            </tr>
+            <tr>
+                <td>Peak hours<br>&nbsp (10.00 am to 1.00 pm)<br>&nbsp(3.00 pm to 6.00 pm)</td>
+                <td>Foreign Adult<br>Foreign Child</td>
+                <td>13 USD<br>&nbsp 8 USD</td>
+            </tr>
+            <tr>
+                <td>Normal hours</td>
+                <td>SL Adult<br>SL Child</td>
+                <td>&nbsp 4 USD<br>&nbsp 2 USD</td>
+            </tr>
+            <tr>
+                <td>Peak hours<br>&nbsp(10.00 am to 1.00 pm)<br>&nbsp(3.00 pm to 6.00 pm)</td>
+                <td>SL Adult<br>SL Child</td>
+                <td>&nbsp 6 USD<br>&nbsp 8 USD</td>
+            </tr>
+            
+            <tr>
+                <td>Normal hours/ Peak hours</td>
+                <td>SL Infants/ Foreign Infants</td>
+                <td>Free</td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</fieldset>
+
+<!--summary table-->
+
+<fieldset>
+
+<br><legend><h3>Summary Table</h3><br></legend>
+
+<table id="customers">
+    
+    <thead>
+        <tr>
+            <td>Date</td>
+            <td>Headcount</td>
+            <td>Your time</td>
+            <td>charges</td>
+        </tr>
+    </thead>
+
+    <tbody>
+       
+    </tbody>
+
+</table> 
+</br> 
+
+</fieldset>
+
+
+<!--Purchase-->
+<div class="button">
+    <form action="details.html">
+    <button class="btn1">Continue with Purchase</button>
+    </form>   
+</form>
+</div> 
+
+<script type="text/javascript">
+    
+    
+
+</script>
+</div>
+
+<script type="text/javascript">
+    
+    function addToSummeryTable(){
+        var date = document.getElementById("calendar").value;
+
+
+        var localAdult = 0;
+        var localChild = 0;
+        var foreignAdult = 0;
+        var foreignChild = 0;
+        var infant = 0;
+        var allVisiters = 0;
+
+        localAdult = parseInt(document.getElementById('localAdult').textContent);
+        localChild = parseInt(document.getElementById("localChild").textContent);
+        foreignAdult = parseInt(document.getElementById("foreignAdult").textContent);
+        foreignChild = parseInt(document.getElementById("foreignChild").textContent);
+        infant = parseInt(document.getElementById("infant").textContent);
+
+        allVisiters = localAdult + localChild + foreignAdult + foreignChild + infant;
+
+
+
+            var time1 = 0
+            var time2 = 0
+            var time3 = 0
+            var time4 = 0
+            var time5 = 0
+            var time6 = 0
+            var time7 = 0
+            var time8 = 0
+            var time9 = 0
+            var time10 = 0
+
+            if(this.checked === true){
+            time1 = parseInt(document.getElementById('time1').value.replace('-0900',''));
+            time2 = parseInt(document.getElementById('time2').value.replace('-1000',''));
+            time3 = parseInt(document.getElementById('time3').value.replace('-1100',''));
+            time4 = parseInt(document.getElementById('time4').value.replace('-1200',''));
+            time5 = parseInt(document.getElementById('time5').value.replace('-1300',''));
+            time6 = parseInt(document.getElementById('time6').value.replace('-1400',''));
+            time7 = parseInt(document.getElementById('time7').value.replace('-1500',''));
+            time8 = parseInt(document.getElementById('time8').value.replace('-1600',''));
+            time9 = parseInt(document.getElementById('time9').value.replace('-1700',''));
+            time10 = parseInt(document.getElementById('time10').value.replace('-1800',''));
+       }
+
+
+        var foreignAdultChargeInPeak = 0;
+        var foreignChildChargrInPeak = 0;
+        var localAdultCargeInPeak = 0;
+        var localChildChargeInPeak = 0;
+
+        var foreignAdultChargeInNormal = 0;
+        var foreignChildChargrInNormal = 0;
+        var localAdultCargeInNormal =  0;
+        var localChildChargeInNormal = 0;
+
+        var fullPayment = 0;
+
+        var variableCount = 0;
+
+
+
+        if(time3 || time4 || time8 || time9 || time10 == 0){            
+
+            foreignAdultChargeInPeak = foreignAdult*13;
+            foreignChildChargrInPeak = foreignChild*8;
+            localAdultCargeInPeak = localAdult*6;
+            localChildChargeInPeak = localChild*3;
+
+        }else{
+
+            foreignAdultChargeInNormal = foreignAdult*10;
+            foreignChildChargrInNormal = foreignChild*5;
+            localAdultCargeInNormal = localAdult*4;
+            localChildChargeInNormal = localChild*2; 
+
+        }
+
+        fullPayment = foreignAdultChargeInPeak + foreignChildChargrInPeak + localAdultCargeInPeak + localChildChargeInPeak + foreignAdultChargeInNormal + foreignChildChargrInNormal + localAdultCargeInNormal + localChildChargeInNormal; 
+
+
+
+        var tr = document.createElement('tr');
+
+        var td1 = tr.appendChild(document.createElement('td'));
+        var td2 = tr.appendChild(document.createElement('td'));
+        var td3 = tr.appendChild(document.createElement('td'));
+        var td4 = tr.appendChild(document.createElement('td'));
+
+        td1.innerHTML = date;
+        td2.innerHTML = allVisiters;
+        td3.innerHTML = listArray;
+        td4.innerHTML = fullPayment;
+
+        document.getElementById('customers').appendChild(tr);
+        
+    }
+
+
+</script>
+
+    </body>
+</html>
+
